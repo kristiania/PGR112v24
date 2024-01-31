@@ -1,4 +1,4 @@
 # Oppgaver
 
-Her legges både oppgaver og ekstra-opgpaver ut.
+Her legges både oppgaver og ekstra-oppgaver ut.
 
