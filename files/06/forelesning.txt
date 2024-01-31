@@ -1,0 +1,2 @@
+Heisann!
+Dette er noe tekst lagret i en tekstfil.
