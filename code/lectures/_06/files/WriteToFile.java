@@ -7,7 +7,7 @@ public class WriteToFile
 {
     public static void main(String[] args) {
         try {
-            FileWriter output = new FileWriter("files/06/output.data");
+            FileWriter output = new FileWriter("files/lecture/06/output.data");
 
             output.write("Dette er linje 1\nDette er linje 2\n");
             output.write("Dette er linje 3\n");
