@@ -58,10 +58,10 @@ Lykke til! Oppgavene fortsetter under, og tar utgangspunkt i at du har laget deg
 
 - For hver av klassene du har planlagt:
   - Lag klassen med et engelsk navn, og:
-  - Opprett felter
-  - Opprett konstruktør(er)
-  - Opprett getter- og nødvendige setter-metoder
-  - Opprett andre metoder relevant for hva objektet kan gjøre (endre data, printe ut informasjon om seg selv, gjøre et regnestykke basert på data lagret i objektet, osv.)
+    - Opprett felter
+    - Opprett konstruktør(er)
+    - Opprett getter- og nødvendige setter-metoder
+    - Opprett andre metoder relevant for hva objektet kan gjøre (endre data, printe ut informasjon om seg selv, gjøre et regnestykke basert på data lagret i objektet, osv.)
 
 
 - Opprett en klasse som heter «JavaProgram1»
@@ -76,7 +76,7 @@ Lykke til! Oppgavene fortsetter under, og tar utgangspunkt i at du har laget deg
 - 2) Etter du har opprettet denne klassen, opprett 2 nye klasser som arver fra klassen du har laget
 
 - 3) Opprett en ny klasse som heter «JavaProgram2»
-     - I denne klassen, opprett en statisk main-metode som tar i bruk klassene som arver fra klassen du laget innledningsvis, og som tar i bruk metoder for å gjøre noe med denne klassen
+      - I denne klassen, opprett en statisk main-metode som tar i bruk klassene som arver fra klassen du laget innledningsvis, og som tar i bruk metoder for å gjøre noe med denne klassen
 
 
 ## Oppgave #3
@@ -84,3 +84,8 @@ Lykke til! Oppgavene fortsetter under, og tar utgangspunkt i at du har laget deg
 - Velg en av klassene du lagde i oppgave #1, og gjør denne om til en klasse som andre klasser kan arve fra. Dette kan gjøres i en ny klasse med et litt annerledes navn eller ved å legge på «Generic» foran navnet på klassen
 
 - Opprett en ny klasse som arver fra denne nye klassen, og test ut at alt fungerer som det skal (at du har tilgang til metoder og data (via getter-metoder)
+
+---
+
+## Ekstra utfordring - `aggregering`
+
