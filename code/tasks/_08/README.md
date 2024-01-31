@@ -1,5 +1,6 @@
 # Oppgavesett 08
 
+---
 
 Oppgavene kan løses i `./src/`-mappen som du ser over denne `README.md`-filen
 
@@ -84,7 +85,7 @@ Oppgave #8 og #9 gjøres i main-metoden opprettet i oppgave #7
 - Gå igjennom alle objektene (figurene) i HashMap-et opprettet og skriv ut informasjon om hvert objekt til terminalen (slik at toString()-metoden brukes uten at en må kalle direkte på toString-metoden)
 
 
-# Oppgave #9
+## Oppgave #9
 - Velg ut et objekt fra HashMap-et basert på en nøkkel du vet eksisterer og sjekk om du fikk forventet objekt ved å skrive ut informasjon om objektet
 
 ---
