@@ -1,10 +1,37 @@
 ### Kristiania PGR112 ###
 code/**/code/**/*
 code/**/src/**/*
+# eksempel filer
 files/example/**/*
 !files/example/.placeholder
-files/local/**/*
-!files/local/.placeholder
+# filer i forbindelse med forelesniger
+!files/lecture/**/*
+# filer som trengs i forbindelse med oppgaver
+!files/01/**/*
+!files/02/**/*
+!files/03/**/*
+!files/04/**/*
+!files/05/**/*
+!files/06/**/*
+!files/07/**/*
+!files/08/**/*
+!files/09/**/*
+!files/10/**/*
+!files/11/**/*
+!files/12/**/*
+!files/13/**/*
+!files/14/**/*
+!files/15/**/*
+!files/16/**/*
+!files/17/**/*
+!files/18/**/*
+!files/19/**/*
+!files/20/**/*
+!files/21/**/*
+!files/22/**/*
+!files/23/**/*
+!files/24/**/*
+# student filer
 student/**/*
 !student/**/public/**/*
 !student/README.md
