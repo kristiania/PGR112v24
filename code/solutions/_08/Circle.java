@@ -35,12 +35,12 @@ public class Circle extends Shape
     //# Metoder
     // Regn ut areal
     public double getArea() {
-        return 0.0;
+        return Math.PI*(this.getRadius()*this.getRadius());
     }
 
     // Regn ut omkrets
     public double getPerimeter() {
-        return 0.0;
+        return 2*Math.PI*this.getRadius();
     }
 
     @Override
