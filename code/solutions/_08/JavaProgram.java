@@ -35,13 +35,16 @@ public class JavaProgram
         Shape shape = shapes.get(4);
 
         System.out.println("---");
-        System.out.printf("Informasjon om figur med id %d:".formatted(shape.getID()));
+        System.out.printf("Informasjon om figur med id %d:%n".formatted(shape.getID()));
         System.out.println(shape);
         System.out.printf(" * Areal: %.2f%n".formatted(shape.getArea()));
         System.out.printf(" * Omkrets: %.2f%n".formatted(shape.getPerimeter()));
 
         // Ekstra oppgave 1
         JavaProgram.extraTask1(shapes);
+
+        // Ekstra oppgave 2
+        JavaProgram.extraTask2(shapes);
     }
 
     public static void extraTask1(HashMap<Integer, Shape> shapes) {
@@ -51,6 +54,22 @@ public class JavaProgram
 
             // Her er key = id
             // Her er value = figuren
+        }
+    }
+
+    public static void extraTask2(HashMap<Integer, Shape> shapes) {
+        double area = 50;
+
+        System.out.println("---");
+        System.out.println("Ekstra oppgave 2");
+        System.out.println("Følgende figurer har areal over %.2f:".formatted(area));
+        System.out.println("---");
+
+        for (Shape shape : shapes.values()) {
+            if (shape.getArea() >= area) {
+
+                System.out.println(shape);
+            }
         }
     }
 }
