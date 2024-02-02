@@ -54,6 +54,10 @@ public abstract class Shape
 
     @Override
     public String toString() {
-        return "Shape[color=" + this.getColor() + ";filled=" + this.isFilled() + ";]";
+        return "Shape[id=%d; color=%s;  filled=%b;]".formatted(
+                this.getID(),
+                this.getColor(),
+                this.isFilled()
+        );
     }
 }

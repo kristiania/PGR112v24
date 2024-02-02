@@ -43,4 +43,14 @@ public class Rectangle extends Shape
     public double getPerimeter() {
         return this.getWidth()*2 + this.getHeight()*2;
     }
+
+    @Override
+    public String toString() {
+        return "Rectangle[id=%d; width=%.2f; height=%.2f;]%n - %s%n".formatted(
+                super.getID(),
+                this.getWidth(),
+                this.getHeight(),
+                super.toString()
+        );
+    }
 }

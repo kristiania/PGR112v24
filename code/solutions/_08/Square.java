@@ -23,4 +23,15 @@ public class Square extends Rectangle
         this.setWidth(value);
         this.setHeight(value);
     }
+
+
+    //# Methods
+    @Override
+    public String toString() {
+        return "Square[id=%d; side=%.2f;]%n - %s%n".formatted(
+                super.getID(),
+                this.getSide(),
+                super.toString()
+        );
+    }
 }

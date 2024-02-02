@@ -42,4 +42,13 @@ public class Circle extends Shape
     public double getPerimeter() {
         return 0.0;
     }
+
+    @Override
+    public String toString() {
+        return "Circle[id=%d; radius=%.2f;]%n - %s%n".formatted(
+                super.getID(),
+                this.getRadius(),
+                super.toString()
+        );
+    }
 }
