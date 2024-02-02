@@ -46,8 +46,7 @@ public class Rectangle extends Shape
 
     @Override
     public String toString() {
-        return "Rectangle[id=%d; width=%.2f; height=%.2f;]%n - %s%n".formatted(
-                super.getID(),
+        return "Rectangle[width=%.2f; height=%.2f;]%n - %s".formatted(
                 this.getWidth(),
                 this.getHeight(),
                 super.toString()

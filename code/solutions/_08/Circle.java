@@ -45,8 +45,7 @@ public class Circle extends Shape
 
     @Override
     public String toString() {
-        return "Circle[id=%d; radius=%.2f;]%n - %s%n".formatted(
-                super.getID(),
+        return "Circle[radius=%.2f;]%n - %s".formatted(
                 this.getRadius(),
                 super.toString()
         );

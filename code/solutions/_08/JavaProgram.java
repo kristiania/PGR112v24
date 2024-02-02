@@ -24,5 +24,9 @@ public class JavaProgram
         for (Shape shape : list) {
             shapes.put(shape.getID(), shape);
         }
+
+        for (Shape shape : shapes.values()) {
+            System.out.println(shape);
+        }
     }
 }

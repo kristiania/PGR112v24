@@ -28,8 +28,7 @@ public class Square extends Rectangle
     //# Methods
     @Override
     public String toString() {
-        return "Square[id=%d; side=%.2f;]%n - %s%n".formatted(
-                super.getID(),
+        return "Square[side=%.2f;]%n - %s".formatted(
                 this.getSide(),
                 super.toString()
         );
