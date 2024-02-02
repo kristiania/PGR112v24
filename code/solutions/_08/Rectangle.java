@@ -6,6 +6,9 @@ public class Rectangle extends Shape
     private double width;
     private double height;
 
+    public Rectangle() {
+        this(1.0, 1.0);
+    }
 
     //# Constructors
     public Rectangle(double width, double height) {
