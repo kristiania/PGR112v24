@@ -1,6 +1,6 @@
 package solutions._08;
 
-public class Shape
+public abstract class Shape
 {
     //# Felter
     private String color;
