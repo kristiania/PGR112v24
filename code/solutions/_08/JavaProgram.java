@@ -2,6 +2,8 @@ package solutions._08;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+
 
 public class JavaProgram
 {
@@ -37,5 +39,18 @@ public class JavaProgram
         System.out.println(shape);
         System.out.printf(" * Areal: %.2f%n".formatted(shape.getArea()));
         System.out.printf(" * Omkrets: %.2f%n".formatted(shape.getPerimeter()));
+
+        // Ekstra oppgave 1
+        JavaProgram.extraTask1(shapes);
+    }
+
+    public static void extraTask1(HashMap<Integer, Shape> shapes) {
+        for (Map.Entry<Integer, Shape> shape : shapes.entrySet()) {
+            int key = shape.getKey();
+            Shape value = shape.getValue();
+
+            // Her er key = id
+            // Her er value = figuren
+        }
     }
 }
