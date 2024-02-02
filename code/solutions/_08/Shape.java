@@ -2,11 +2,16 @@ package solutions._08;
 
 public abstract class Shape
 {
-    //# Felter
+    //# Static fields
+    private static int counter = 0;
+
+    //# Fields
+    private final int id;
     private String color;
     private boolean filled;
 
-    //# Konstruktører
+
+    //# Constructors
     public Shape() {
         this("red", true);
     }
@@ -14,9 +19,15 @@ public abstract class Shape
     public Shape(String color, boolean filled) {
         this.setColor(color);
         this.setFilled(filled);
+
+        this.id = Shape.counter ++;
     }
 
-    //# Getter-metoder
+    //# Getter-methods
+    public int getID() {
+        return this.id;
+    }
+
     public String getColor() {
         return this.color;
     }
@@ -25,7 +36,8 @@ public abstract class Shape
         return this.filled;
     }
 
-    //# Setter-metoder
+
+    //# Setter-methods
     private void setColor(String value) {
         this.color = value;
     }
@@ -34,7 +46,8 @@ public abstract class Shape
         this.filled = value;
     }
 
-    //# Metoder
+
+    //# Methods
     public abstract double getArea();
 
     public abstract double getPerimeter();
