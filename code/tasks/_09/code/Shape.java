@@ -3,7 +3,12 @@ package tasks._09.code;
 
 public abstract class Shape
 {
+    //# Static fields
+    private static int counter = 0;
+
+
     //# Fields
+    private final int id;
     private String color;
     private boolean filled;
 
@@ -16,10 +21,16 @@ public abstract class Shape
     public Shape(String color, boolean filled) {
         this.setColor(color);
         this.setFilled(filled);
+
+        this.id = Shape.counter ++;
     }
 
 
     //# Getter-methods
+    public int getID() {
+        return this.id;
+    }
+
     public String getColor() {
         return this.color;
     }
