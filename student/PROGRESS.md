@@ -1,6 +1,6 @@
 # Oversikt over ferdigheter
 
-> Versjon: **2024-02-06**
+> Versjon: **2024-02-07**
 
 > PGR112 Objektorientert programmering
 
@@ -57,6 +57,7 @@ Jeg klarer å ...
 - [ ] klarer å bruke Scanner for å lese en tekstfil linje for linje
 - [ ] klarer å bruke FileWriter for å skrive over innholdet i en tekstfil
 - [ ] klarer å bruke FileWriter for å legge til tekst på slutten av en tekstfil som allerede inneholder tekst
+- [ ] klarer å bruke nøkkelordet `instanceof` og kjenner til når vi bruker dette
 
 ---
 
@@ -80,6 +81,12 @@ Jeg klarer å ...
 - [ ] forklare hva som menes med at en abstrakt klasse er 0 til 100% abstrakt og at et grensesnitt er 100% abstrakt
 - [ ] konvertere en abstrakt klasse som kun har abstrakte offentlige metoder om til et grensesnitt
 - [ ] opprette en klasse som implementerer et grensesnitt
+- [ ] lage en polymorfisk metode (her trengs det en klasse som arver eller implementerer et grensesnitt)
+- [ ] beskrive forskjellen på compile-time og runtime
+- [ ] lage et eksempel som viser polymorfisme ved hjelp av å overskrive arvede metoder
+- [ ] lage et eksempel som viser polymorfisme ved hjelp av et grensesnitt
+- [ ] lage et eksempel som viser bruk av downcasting
+- [ ] lage et eksempel som viser bruk av upcasting
 
 ---
 
@@ -90,6 +97,9 @@ Jeg klarer å ...
 - [ ] kjenner til ordet "abstrakt" og hva som menes med det
 - [ ] kjenner til ordet "implementasjon" og hva som menes med det, spesielt i konteksten av abstrakte metoder
 - [ ] forklare forskjellen på pascal-case, camel-case og kebab-case når det kommer til å navngi noe
+- [ ] bruke et grensesnitt (interface) for planlagge hva ulike klasser må ha tilgjengelig av offentlige metoder før klasser lages
+- [ ] bryte opp større offentlig (public) metoder ved å bruke private metoder som hjelpe-metoder
+- [ ] forklare hva en logisk feil i programmering er (`RuntimeException` oppstår ofte i slike situasjoner)
 
 ---
 
