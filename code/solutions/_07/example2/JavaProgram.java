@@ -8,6 +8,8 @@ public class JavaProgram
         Product apple = new Product("Apple", 5.20);
         Product banana = new Product("Banana", 7.50);
 
+        DiscountedProduct oldBanana = new DiscountedProduct("Old Banana", 2.35, 50);
+
         int apples = 5;
         int bananas = 3;
 
@@ -19,10 +21,22 @@ public class JavaProgram
             cart.addProduct(banana);
         }
 
-        System.out.printf("Total prisen for %d epler og %d bananer er kr %.2f,-".formatted(
-                apples,
-                bananas,
+        cart.addProduct(oldBanana);
+        cart.addProduct(oldBanana);
+        cart.addProduct(oldBanana);
+
+        System.out.printf("Total prisen er kr %.2f,-%n".formatted(
                 cart.totalPrice()
         ));
+
+        int discountedProducts = 0;
+
+        for (Product product : cart) {
+            if (product instanceof DiscountedProduct) {
+                discountedProducts += cart.getProductQuantity(product);
+            }
+        }
+
+        System.out.println("Antall rabatterte produkter: " + discountedProducts);
     }
 }

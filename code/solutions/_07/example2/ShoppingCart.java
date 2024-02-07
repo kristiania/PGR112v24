@@ -1,8 +1,9 @@
 package solutions._07.example2;
 
 import java.util.HashMap;
+import java.util.Iterator;
 
-public class ShoppingCart
+public class ShoppingCart implements Iterable<Product>
 {
     // produkt og antall av produktet
     private HashMap<Product, Integer> data;
@@ -47,6 +48,10 @@ public class ShoppingCart
         return !this.isEmpty();
     }
 
+    public int getProductQuantity(Product product) {
+        return this.data.get(product);
+    }
+
     public double totalPrice() {
         double price = 0;
 
@@ -56,4 +61,9 @@ public class ShoppingCart
 
         return price;
      }
+
+    @Override
+    public Iterator<Product> iterator() {
+        return this.data.keySet().iterator();
+    }
 }
