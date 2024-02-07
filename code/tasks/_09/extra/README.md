@@ -1,6 +1,6 @@
 # Ekstra oppgaver -- Oppgavesett 09
 
-Disse oppgavene vokser kjapt mtp. vanskelighetsgrad, hvor oppgave #3 regnes som veldig vanskelig og #4 som veldig-veldig vanskelig
+Disse oppgavene vokser kjapt mtp. vanskelighetsgrad, hvor oppgave #4 regnes som veldig vanskelig og #5 som veldig-veldig vanskelig
 
 ---
 
@@ -11,15 +11,17 @@ så kan det være lurt at disse punktene samsvarer med hverandre!
 
 Valider i konstruktøren ved hjelp av if-setninger at hjørnet oppe til venstre faktisk er til venstre for punktet som er nede til høyre.
 
-### Oppgave #1 alternativ 2
+### Oppgave #2
 
 Istedenfor et hjørne oppe til venstre og et hjørne nede til høyre, hvorfor ikke bare bruke 2 vilkårlige punkter, og firkanten er det som er i mellom disse punktene?
 
 Gjør nødvendige endringer for å få dette til.
 
+En "hurtigfiks" her er å endre navn på feltene
+
 ---
 
-## Oppgave #2
+## Oppgave #3
 
 Inne i konstruktørene hvor bredde og høyde settes for firkanter, bruk if-setninger for å sjekke om punktene samsvarer med bredden og høyden gitt, og om det ikke stemmer, print ut til terminalen en feilmelding (*eller* kast en exception) hvor det nevnes at punktene gitt ikke samsvarer med bredden og høyden gitt!
 
@@ -29,7 +31,7 @@ Det vil si, at vi må sjekke at distancen (*per akse*) mellom punktene samsvarer
 > PS: Oppgavene under er vanskelig, en utfordring for de som ønsker dette!
 ---
 
-## Oppgave #3
+## Oppgave #4
 
 På lik linje med kvadratet (`Square`) teknist sett er et rektangel (`Rectangle`),
 hvor bredden og høyden er like lange, gjelder dette også for ellipser (`Ellipse`) og sirkler (`Circle`).
@@ -51,12 +53,12 @@ Gjør som følger:
 - Opprett en ny klasse som heter `Ellipse` som arver fra `Shape`
   - Sørg for at konstruktøren til `Ellipse` mottar to ulike radiuser og implementerer metodene klassen `Shape` spør om
 
-- Endre `Circle`-klassen slik at denne arver fra `Ellipser`
+- Endre `Circle`-klassen slik at denne arver fra `Ellipse`
   - Gjør nødvendig endringer slik at `Circle`-klassen gjenbruker mest mulig kode fra klassen `Ellipse`
 
 --
 
-## Oppgave #4
+## Oppgave #5
 
 Istedenfor å bruke to ulike radiuser for å definere en ellipse, forsøk å bruke to ulike punkter.
 
