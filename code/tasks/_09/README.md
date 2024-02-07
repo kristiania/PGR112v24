@@ -6,6 +6,8 @@ Disse oppgavene kan være omfattende og utfordrende, hvor det er viktig å forts
 
 Det er ikke forventet at du klarer alle disse oppgavene til i morgen eller neste uke.
 
+Husk: `grensesnitt` == `interface`
+
 Masse lykke til!
 
 ---
@@ -21,12 +23,11 @@ figurene.
 
 Hvordan kan vi gjøre dette?
 
-Først og fremst, så trenger klassene våre et konsept av hvor de er, dette vil si at vi trenger x- og y-
-koordinater.
+Først og fremst, så trenger klassene våre et konsept av hvor de er, dette vil si at vi trenger x- og y-koordinater.
 Vi forholder oss kun til to dimensjoner.
 
-Deretter trenger vi metoder som kan flytte rundt på figurene, slik at disse koordinatene oppdateres til å
-alltid vise hvor figuren er.
+Deretter trenger vi metoder som kan flytte rundt på figurene,
+slik at disse koordinatene oppdateres til å alltid vise hvor figuren er.
 
 For eksempelvis, for en sirkel, trenger vi å vite ét punkt: Sirkelens kjerne.
 
@@ -39,7 +40,7 @@ La oss begynne med å lage et grenesnitt for hvordan disse figurene skal flyttes
 
 ## Oppgave #1
 
-Lag et interface ved navn `Movable`. Metodene i interfacet skal være:
+Lag et grensesnitt som heter `Movable`. Metodene i grensesnittet skal være:
 - moveUp(double distance)
 - moveDown(double distance)
 - moveLeft(double distance)
@@ -51,14 +52,14 @@ Disse metodene skal ikke returnere noe
 
 ## Oppgave #2
 
-Lag en klasse ved navn MovablePoint.
+Lag en klasse som heter `MovablePoint`.
 
 Denne klassen skal ha følgende felt: **x** og **y**, begge av datatypen **double**.
 
-Klassen skal deretter implementere interfacet Movable.
+Klassen skal deretter implementere grensesnittet `Movable`.
 
-Implementer metodene som interfacet krever, hvor disse metodene skal manipulere x- og y-koordinatene
-ut i fra hvilken metode som kjøres, at:
+Implementer metodene som grensesnittet krever,
+hvor disse metodene skal manipulere x- og y-koordinatene ut i fra hvilken metode som kjøres, at:
 
 - `moveUp(...)` og `moveDown(...)` påvirker y-verdien riktig
 - `moveLeft(...)` og `moveRight(...)` påvirker x-verdien riktig
@@ -73,7 +74,9 @@ Til informasjon, se illustrasjonen nedenfor:
 
 Vi ønsker nå at alle figurene våre skal ha en posisjon (punkter) i et koordinatsystem som viser hvor figuren er.
 Det vi ønsker er å vite er hvor på x-aksen og y-aksen figurene befinner seg.
+
 En utfordring her er jo at figurene er forskjellige.
+
 For sirkler trenger vi bare å vite senterpunktet til sirkelen,
 hvor vi ved firkanter trenger 2 punkter (topp-venstre og bunn-høyre hjørne).
 
@@ -94,10 +97,12 @@ da vi jobber med flyttall (double).
 
 ## Oppgave #4
 
-Sørg nå for at firkanter (figurene Rectangle og Square) har en plassering i et koordinatsystem.
+Sørg nå for at firkanter (figurene `Rectangle` og `Square`) har en plassering i et koordinatsystem.
 Husk at vi her trenger to punkter for å representere plasseringen til figuren i koordinatsystemet!
 
 Du kan lese litt mer om hvorfor vi trenger to punkter her og ikke kun ét i bunnen av oppgavesettet.
+
+I bunn og grunn handler dette om at `getWidth()` og `getHeight()` ikke er koordinater, og representerer en måling av lengde i to ulike retninger.
 
 ---
 
@@ -117,9 +122,10 @@ Endre klasse `Shape` slik at denne implementerer grensesnittet `Movable`.
 
 Hva skjedde?
 
-Du vil gjerne legge merke til at vi ikke har noen kompileringsfeil i klassen Shape.
+Du vil gjerne legge merke til at vi ikke har noen kompileringsfeil i klassen `Shape`.
 Denne er jo abstract, men sub-klassene vil få problemer med å kompilere.
-Vi sier jo nå at alle figurere må implementere metodene fra grensesnittet `Movable, men dette er ikke helt tilfelle enda!
+Vi sier jo nå at alle figurere må implementere metodene fra grensesnittet `Movable`,
+men dette er ikke helt tilfelle enda!
 
 Det hadde vært kult om vi bare kunne implementert metodene i `Shape`-klassen,
 og så hadde det løst seg for alle figurene, men det er her problemet oppstår:
@@ -128,7 +134,7 @@ Ikke alle figurer er like. Sirkler har ét punkt for sin posisjon, hvor firkante
 La oss begynne med `Circle`-klassen.
 Implementer metodene fra grensesnittet `Movable` i klassen slik at sirkelen kan flyttes rundt på ved å kalle disse metodene.
 
-Her kan det også være greit å oppdatere `toString()-metoden vår slik at posisjonen (punktene) også printes ut!
+Her kan det også være greit å oppdatere `toString()`-metoden vår slik at posisjonen (*punktene*) også printes ut!
 
 ---
 
@@ -146,7 +152,10 @@ Er det mer å gjøre her? Vel, vi må jo gjerne få testet om at alt fungerer so
 
 For å få dette til kan vi gjerne bruke polymorfisme.
 
-Opprett en klasse ved navn TestShapes.
+--
+
+Opprett en klasse ved navn `TestShapes`.
+
 Opprett en main-metode som gjør følgende:
 
 - Opprett et objekt for hver type figur
@@ -156,10 +165,10 @@ Opprett en main-metode som gjør følgende:
   - Tenk litt på det. Som et hint, kan en klasse all disse objektene har til felles brukes som type her!
 
 - Deretter:
-  - Gå igjennom alle figurene i ArrayList-en og flytt de i en eller annen retning, hvilken er ikke viktig her, bare at de flyttes på
+  - Gå igjennom alle figurene i `ArrayList`-en og flytt de i en eller annen retning, hvilken er ikke viktig her, bare at de flyttes på
   - Etter du har flyttet på figurene, gå igjennom figurene på nytt og print ut informasjon om hver figur
 
-Hint: Forsøk å print ut referansen til objektene direkte! Metoden toString() kommer på banen her.
+Hint: Forsøk å print ut referansen til objektene direkte! Metoden `toString()` kommer på banen her.
 
 Ble figurene flyttet på slik som forventet? Sjekk koordinatene som printes ut!
 
@@ -167,7 +176,7 @@ Ble figurene flyttet på slik som forventet? Sjekk koordinatene som printes ut!
 
 ## Oppgave #8
 
-Lag en unik metode i hver av klassene `Circle`, `Rectangle` og `Square.
+Lag en unik metode i hver av klassene `Circle`, `Rectangle` og `Square`.
 Unik i den forstand at alle klassene har en egen metode som gjør noe de andre klassene ikke gjøre.
 Dette kan for eksempelvis være så enkelt som at det printes ut en unik linje med tekst til terminalen.
 
@@ -181,11 +190,10 @@ Shape shape1 = new Circle(1.0, "green", true, new MovablePoint(0.0, 0.0));
 Sjekk hvilke metoder du har tilgang til via denne objekt-referansen, hvor du kan la IntelliJ hjelpe deg her
 ved å begynne å skrive `shape1.` for å se hva IntelliJ foreslår. Får du tilgang til de unike metodene?
 
-Putt disse `Shape`-objektene i en `ArrayList`, og gå igjennom hver figure og gjør følgende:
+Legg disse `Shape`-objektene inn i en `ArrayList`, og gå igjennom hver figure og gjør følgende:
 - Print ut areal og omkrets
-- Kall på den unike metoden som figuren har.
-  - Bruk gjerne `instanceof` her i en if-setning for å sjekke hvilket type objekt du faktisk jobber med, hvor du inne i if-setningen vil kunne referere til de unike metodene. Bruk også
-  IntelliJ for å sjekke om dette faktisk stemmer ved å se på forslagene den kommer med.
+- Kall på den unike metoden som figuren har
+  - Bruk gjerne `instanceof` her i en if-setning for å sjekke hvilket type objekt du faktisk jobber med, hvor du inne i if-setningen vil kunne referere til de unike metodene.Bruk også IntelliJ for å sjekke om dette faktisk stemmer ved å se på forslagene den kommer med.
 
 ---
 
@@ -197,7 +205,7 @@ Den geometriske grunnen er at dersom vi hadde kun ét punkt for firkanter,
 for eksempel topp-venstre hjørne, vil vi ikke ved hjelp av `getWidth()` og `getHeight()` vite i hvilken retning firkanten er så bred og så høy,
 altså i hvilken retning firkanten tar opp plass.
 
-Ved hjelp av to punkter vil vi ha informasjon angående hvilken retning firkantet tar opp plass, fra et hjørne til et annet (diagonalt fra hverandre).
+Ved hjelp av to punkter vil vi ha informasjon angående hvilken retning firkanten tar opp plass, fra et hjørne til et annet (diagonalt fra hverandre).
 
 Vi kunne brukt `getWidth()` og `getHeight()` for å estimere hvor nedre-høyre hjørne er eksempelvis her,
 men i og med at verdiene lagret i feltene **width** og **height** alltid er positive,

@@ -25,7 +25,7 @@ En "hurtigfiks" her er å endre navn på feltene
 
 Inne i konstruktørene hvor bredde og høyde settes for firkanter, bruk if-setninger for å sjekke om punktene samsvarer med bredden og høyden gitt, og om det ikke stemmer, print ut til terminalen en feilmelding (*eller* kast en exception) hvor det nevnes at punktene gitt ikke samsvarer med bredden og høyden gitt!
 
-Det vil si, at vi må sjekke at distancen (*per akse*) mellom punktene samsvarer med bredden (*x-aksen*) og høyden (*y-aksen*).
+Det vil si, at vi må sjekke at distansen (*per akse*) mellom punktene samsvarer med bredden (*x-aksen*) og høyden (*y-aksen*).
 
 ---
 > PS: Oppgavene under er vanskelig, en utfordring for de som ønsker dette!
@@ -33,17 +33,17 @@ Det vil si, at vi må sjekke at distancen (*per akse*) mellom punktene samsvarer
 
 ## Oppgave #4
 
-På lik linje med kvadratet (`Square`) teknist sett er et rektangel (`Rectangle`),
+På lik linje med at kvadratet (`Square`) teknisk sett er et rektangel (`Rectangle`),
 hvor bredden og høyden er like lange, gjelder dette også for ellipser (`Ellipse`) og sirkler (`Circle`).
 
-En ellipse kan være bygget opp ved å bruke to forskjellige punkter som bestemmer hvordan elliopsen vil se ut.
+En ellipse kan være bygget opp ved å bruke to forskjellige punkter som bestemmer hvordan ellipsen vil se ut.
 Disse kalles for fokalpunkter, se eksempel under:
 
 ![3 ulike ellipse som viser fokalpunkter](../../../../files/tasks/09/extra/ellipse-focal-points.png)
 
 En sirkel oppstår når disse to punktene har akkurat samme posisjon.
 
-**Men**, for å slippe å bruke trigonometri her, kan vi istedenfor to punkter bruke to ulike radiuser, se illustrasjon under for hva jeg mener med dette:
+**Men**, for å slippe det å bruke trigonometri her, kan vi istedenfor to punkter bruke to ulike radiuser, se illustrasjon under for hva som menes med dette:
 
 ![3 ulike ellipse som viser fokalpunkter](../../../../files/tasks/09/extra/ellipse-formulas.png)
 
