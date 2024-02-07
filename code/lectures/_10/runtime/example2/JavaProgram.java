@@ -18,6 +18,7 @@ public class JavaProgram
 
             if (animal instanceof Cat) {
                 ((Cat) animal).scratch();
+                ((Cat) animal).scratch();
             }
             else if (animal instanceof Dog) {
                 ((Dog) animal).bark();
