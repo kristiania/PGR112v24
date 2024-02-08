@@ -26,6 +26,8 @@ Filstruktur:
     │   │   └── Inneholder kategoriserte eksempler 
     │   ├── lectures/
     │   │   └── Inneholder kode skrevet i forelesninger
+    │   ├── projects/
+    │   │   └── Inneholder større prosjekter
     │   ├── solutions/
     │   │   └── Inneholder løsningsforslag
     │   └── tasks/
