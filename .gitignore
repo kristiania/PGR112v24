@@ -9,6 +9,7 @@ files/example/**/*
 # student filer
 student/**/*
 !student/**/public/**/*
+!student/**/src/**/*
 !student/README.md
 
 ### Mavens artifacts ###
@@ -25,6 +26,9 @@ target/
 *.iws
 *.iml
 *.ipr
+
+# markering av mapper mtp. kildekode og filer
+!PGR112v24.iml
 
 ### Eclipse ###
 .apt_generated
