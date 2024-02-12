@@ -1,7 +1,7 @@
 package solutions._09;
 
 
-public abstract class Shape
+public abstract class Shape implements Movable
 {
     //# Static fields
     private static int counter = 0;
