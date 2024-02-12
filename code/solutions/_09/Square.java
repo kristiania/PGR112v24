@@ -11,8 +11,16 @@ public class Square extends Rectangle
         super(side, side);
     }
 
+    public Square(double side, MovablePoint upperLeftCorner, MovablePoint bottomRightCorner) {
+        super(side, side, upperLeftCorner, bottomRightCorner);
+    }
+
     public Square(double side, String color, boolean filled) {
         super(side, side, color, filled);
+    }
+
+    public Square(double side, MovablePoint upperLeftCorner, MovablePoint bottomRightCorner, String color, boolean filled) {
+        super(side, side, upperLeftCorner, bottomRightCorner, color, filled);
     }
 
 
