@@ -35,5 +35,35 @@ public class TestShapes
 
             System.out.println(" - " + shape);
         }
+
+
+        //# Oppgave 08
+        // Her gjenbruker vi "shapes" ArrayList-en ved å klarere den:
+        shapes.clear();
+
+        Shape shape01 = new Circle();
+        Shape shape02 = new Rectangle();
+        Shape shape03 = new Square();
+
+        shapes.add(shape01);
+        shapes.add(shape02);
+        shapes.add(shape03);
+
+        for (Shape shape : shapes) {
+            System.out.println("---");
+            System.out.printf("Shape #%d".formatted(shape.getID()));
+            System.out.printf("Areal: %.2f".formatted(shape.getArea()));
+            System.out.printf("Omkrets: %.2f".formatted(shape.getPerimeter()));
+
+            if (shape instanceof Circle) {
+                ((Circle) shape).uniqueCircleMethod();
+            }
+            else if (shape instanceof Square) {
+                ((Square) shape).uniqueSquareMethod();
+            }
+            else if (shape instanceof Rectangle) {
+                ((Rectangle) shape).uniqueRectangleMethod();
+            }
+        }
     }
 }

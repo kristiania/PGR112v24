@@ -62,6 +62,12 @@ public class Rectangle extends Shape
     }
 
 
+    //# Unique-method
+    public void uniqueRectangleMethod() {
+        System.out.println("Dette er et rektangel (firkant)");
+    }
+
+
     //# Methods
     @Override
     public double getArea() {

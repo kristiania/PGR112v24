@@ -37,6 +37,12 @@ public class Square extends Rectangle
     }
 
 
+    //# Unique-method
+    public void uniqueSquareMethod() {
+        System.out.println("Dette er et kvadrat (firkant)");
+    }
+
+
     //# Methods
     @Override
     public String toString() {

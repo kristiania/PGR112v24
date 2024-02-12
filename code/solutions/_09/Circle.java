@@ -55,6 +55,11 @@ public class Circle extends Shape
     }
 
 
+    //# Unique-method
+    public void uniqueCircleMethod() {
+        System.out.println("Dette er en sirkel");
+    }
+
     //# Methods
     @Override
     public double getArea() {
