@@ -1,7 +1,8 @@
-package lectures._12.src;
+package lectures._12;
 
 
 import java.util.Random;
+
 
 //# Terning
 public class Die
