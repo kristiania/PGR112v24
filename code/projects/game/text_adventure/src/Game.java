@@ -96,8 +96,8 @@ public class Game implements Interactive
 
     boolean isPlayerAdjacentTo(Entity entity) {
         return (
-            Math.abs(entity.getX() - this.getPlayer().getX()) == 1
-         && Math.abs(entity.getY() - this.getPlayer().getY()) == 1
+            Math.abs(entity.getX() - this.getPlayer().getX()) <= 1
+         && Math.abs(entity.getY() - this.getPlayer().getY()) <= 1
         );
     }
 
