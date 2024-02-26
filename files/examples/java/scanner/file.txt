@@ -1,0 +1,4 @@
+Dette er en tekstfil.
+Dette er den andre linjen i tekstfilen.
+Linjenummer 3.
+Siste linje.
