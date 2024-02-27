@@ -1,6 +1,6 @@
 # Oversikt over ferdigheter
 
-> Versjon: **2024-02-07**
+> Versjon: **2024-02-27**
 
 > PGR112 Objektorientert programmering
 
@@ -58,6 +58,9 @@ Jeg klarer å ...
 - [ ] klarer å bruke FileWriter for å skrive over innholdet i en tekstfil
 - [ ] klarer å bruke FileWriter for å legge til tekst på slutten av en tekstfil som allerede inneholder tekst
 - [ ] klarer å bruke nøkkelordet `instanceof` og kjenner til når vi bruker dette
+- [ ] klarer å bruke static kodeblokk for å legge til innledende verdier i statiske felter, f.eks. ArrayList eller HashMap
+- [ ] klarer å forklare forskjellen på statiske og ikke-statiske kodeblokker
+
 
 ---
 
@@ -100,6 +103,7 @@ Jeg klarer å ...
 - [ ] bruke et grensesnitt (interface) for planlagge hva ulike klasser må ha tilgjengelig av offentlige metoder før klasser lages
 - [ ] bryte opp større offentlig (public) metoder ved å bruke private metoder som hjelpe-metoder
 - [ ] forklare hva en logisk feil i programmering er (`RuntimeException` oppstår ofte i slike situasjoner)
+- [ ] bruke DRY-prinsippet for å bryte opp repetiv kode
 
 ---
 
