@@ -7,6 +7,8 @@ public class Forelesning13
         System.out.println("Velkommen til forelesning 13!");
 
         String[] topics = {
+                "Hvor er vi nå?",
+                "Hvor skal vi videre?",
                 "Static code blocks",
                 "Inner classes",
         };
