@@ -12,6 +12,7 @@ public class Store
     static HashMap<Long, Product> catalog = new HashMap<>();
 
     static {
+        System.out.println("Static code block");
         ArrayList<Product> productList = new ArrayList<>();
 
         productList.add(new Product(7044610874913L, "Imsdal Sitron", 25));
@@ -43,7 +44,9 @@ public class Store
 
 
     //# Constructor
-    public Store() {}
+    public Store() {
+        System.out.println("Store constructor");
+    }
 
 
     //# Getter-methods
