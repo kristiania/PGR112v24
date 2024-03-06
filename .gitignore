@@ -11,6 +11,9 @@ student/**/*
 !student/**/public/**/*
 !student/**/src/**/*
 !student/README.md
+# sandkasse for å leke med kode
+code/sandbox/**/*
+!code/sandbox/README.md
 
 ### Mavens artifacts ###
 target/
