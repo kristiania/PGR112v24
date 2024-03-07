@@ -1,4 +1,4 @@
-package lectures._16;
+package lectures._16.cards;
 
 public class Card
 {
