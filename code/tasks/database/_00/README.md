@@ -28,7 +28,7 @@ Logg inn som `root` og utfør følgende:
 
 1. `CREATE DATABASE lecture18;`
 2. `CREATE USER 'lecture18'@'localhost' IDENTIFIED BY 'password18';`
-3. `GRANT PRIVILEGE ON lecture18.* TO 'lecture18'@'localhost';`
+3. `GRANT ALL PRIVILEGES ON lecture18.* TO 'lecture18'@'localhost';`
 
 For å sjekke om det fungerer som det skal, logg inn på MySQL-serveren på nytt med nytt brukernavn og passord istedenfor `root`-brukeren!
 
