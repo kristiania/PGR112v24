@@ -8,7 +8,7 @@ public class CashRegister
     //# Fields
     private int money;
     private Employee employee;
-    private ArrayList<Receipt> receipts;
+    private final ArrayList<Receipt> receipts;
 
 
     //# Constructor
@@ -57,15 +57,20 @@ public class CashRegister
             //# 3.2) Add money to cash register
             this.money += totalPrice;
 
-            //# 3.3) Clear products from customer cart
-
             //# 4) Create a receipt
+            // here a new HashMap is used as we cannot use the same object that
+            // represents the customers' cart - if the customer startet to shop again
+            // this receipt would then reflect that object and not a "snapshot" of what
+            // the customer paid for in terms of buying the products and getting a recept
             Receipt receipt = new Receipt(new HashMap<>());
 
+            // add products from cart to the receipt
             for (Product product : cart.keySet()) {
                 receipt.getProducts().put(product, cart.get(product));
             }
 
+            //# 3.3) Clear products from customer cart
+            // BUT! do it after receipt has new overview of the products from the cart
             cart.clear();
 
             //# 5) Print the receipt to the terminal
@@ -74,15 +79,14 @@ public class CashRegister
             for (Product product : receipt.getProducts().keySet()) {
                 int quantity = receipt.getProducts().get(product);
 
-                System.out.printf(
-                        "%s x%d = %d%n",
-                        product.getName(),
-                        quantity,
-                        product.getPrice()*quantity
+                System.out.println(
+                        STR."\{product.getName()} x\{quantity} = \{product.getPrice()*quantity}"
                 );
             }
 
-            System.out.println("Total price: " + totalPrice);
+            this.getReceipts().add(receipt);
+
+            System.out.println(STR."Totalpris =  \{totalPrice}");
 
             //# 6) return true
             return true;
@@ -93,7 +97,13 @@ public class CashRegister
     }
 
     int totalEarnings() {
-        // TODO go through each receipt and sum up all income and return result
-        return 0;
+        // go through each receipt and sum up all income and return result
+        int totalIncome = 0;
+
+        for (Receipt receipt : this.getReceipts()) {
+            totalIncome += receipt.totalPrice();
+        }
+
+        return totalIncome;
     }
 }

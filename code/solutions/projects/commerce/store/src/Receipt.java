@@ -23,10 +23,37 @@ public class Receipt
 
     //# Methods
     int totalPrice() {
-        return 0; // TODO
+        int total = 0;
+
+        for (Product product : this.getProducts().keySet()) {
+            total += product.getPrice()*this.getProducts().get(product);
+        }
+
+        return total;
     }
 
     int totalProducts() {
-        return 0; // TODO
+        int total = 0;
+
+        for (int quantity : this.getProducts().values()) {
+            total += quantity;
+        }
+
+        return total;
+    }
+
+
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+
+        for (Product product : this.getProducts().keySet()) {
+            string.append(STR."\{product.getName()} x\{this.getProducts().get(product)}; ");
+        }
+
+        return "Receipt[%s] = kr %d,-".formatted(
+                string.toString().trim(),
+                this.totalPrice()
+        );
     }
 }
