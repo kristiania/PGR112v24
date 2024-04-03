@@ -53,7 +53,7 @@ Denne metoden skal sette verdien i feltet `password` til å være resultatet av 
 
 #### Oppgave 2.2.1
 
-Test at dette fungerer ved å lage en klasse med en statisk main-metode som printer ut resultatet av følgende kodelinjer:
+Test at dette fungerer ved å lage en klasse i en midlertidig klasse (dette er kun for å teste) med en statisk main-metode som printer ut resultatet av følgende kodelinjer:
 
 ```java
 
@@ -76,7 +76,7 @@ Denne metoden skal sjekke at `Password.hash(value)` er det samme som er lagret i
 
 ### Oppgave 3
 
-Lag en konstruktør i `Account`-klassen som tar inn brukernavn og passord, hvor konsturktøren bruker `setPassword()`-setter-metoden for å sette passordet ved hjelp av `Password.hash(...)`-metoden.
+Lag en konstruktør i `Account`-klassen som tar inn brukernavn og passord, hvor konstruktøren bruker `setPassword()`-setter-metoden for å sette passordet ved hjelp av `Password.hash(...)`-metoden.
 
 ---
 
