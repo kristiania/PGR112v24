@@ -31,7 +31,7 @@ Logg deg på SQL-databasen din via `root`-brukeren og gjør følgende:
 
 ## Oppgave 3
 
-Finn følgende fil: `code/tasks/database/connection/database.properties`
+Finn følgende fil: `files/tasks/database/terminal/database.properties`
 
 Legg til de nødvendige nøklene og relevante verdier fra oppgave 2, og lagre endringene gjort i filen
 
@@ -47,7 +47,7 @@ I `Terminal`-klassen, opprett en statisk kodeblokk om gjør følgende:
 
 1. Registrer MySQL-driveren
 2. Laster inn `database.properties` fra oppgave 3 ved hjelp av:
-  - `Terminal.configuration.load(new FileInputStream("code/tasks/database/connection/database.properties"))`
+  - `Terminal.configuration.load(new FileInputStream("files/tasks/database/terminal/database.properties"))`
 3. Kaster en `RuntimeException` dersom en feil oppstår ved enten registrering av driver eller ikke alle nøklene med tilhørende verdier er tilstede i `database.properties`-filen
 
 ---
