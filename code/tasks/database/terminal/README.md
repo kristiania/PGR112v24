@@ -3,9 +3,11 @@
 > `code/tasks/database/_01/README.md`
 > 
 > `code/tasks/database/_02/README.md`
+> 
+> `code/tasks/database/_03/README.md`
 
 ---
 
 Sluttresultatet er en terminal hvor du kan logge inn med et brukernavn og passord som er lagret i en database.
 
-Oppgavesett DB_02 legges ut før forelesning 19.
+Oppgavesett DB_02 legges ut før forelesning 19, hvor DB_03 legges ut etter forelesning 19.
