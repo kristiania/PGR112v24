@@ -88,4 +88,4 @@ Lag en konstruktør i `Account`-klassen som tar inn brukernavn og passord, hvor 
 
 ---
 
-> Fortsettelse følger i et annet oppgavesett!
+> Fortsettelse følger i `../_02/README.md`!

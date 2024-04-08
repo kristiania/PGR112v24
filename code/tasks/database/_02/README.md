@@ -62,4 +62,4 @@ Denne metoden skal også ha `throws SQLException` som en del av metode signature
 
 ---
 
-> Fortsettelse følger!
+> Fortsettelse følger i `../_03/README.md`
