@@ -1,3 +1,3 @@
 # `List`
 
-> Vi lærer mer om lister når vi skal ha om grensesnittet `Collection`
+Søk via en søkemoter: `Java Collection API List interface`
