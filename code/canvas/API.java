@@ -21,7 +21,8 @@ public class API implements
         Circles,
         Triangles,
         Lines,
-        Text
+        Text,
+        Images
 {
     //# Cache
     static private final Cache<Font> cacheFont = new Cache<>();
@@ -402,53 +403,51 @@ public class API implements
         return API.cacheImages.get(fileName);
     }
 
-    public void drawImage(Point point, String fileName) {
-        this.drawImage(point, fileName, Anchor.TOP_LEFT);
+    public void drawImage(int x, int y, String fileName, Anchor anchor) {
+        this.drawImage(x, y, this.getImage(fileName), anchor);
     }
 
-    public void drawImageCentered(Point point, String fileName) {
-        this.drawImage(point, fileName, Anchor.CENTER);
-    }
-
-    public void drawImage(String fileName, int x, int y, Anchor anchor) {
-        this.drawImage(new Point(x, y), fileName, anchor);
-    }
-
-    public void drawImage(Point point, String fileName, Anchor anchor) {
-        BufferedImage image = this.getImage(fileName);
-
+    public void drawImage(int x, int y, BufferedImage image, Anchor anchor) {
         float[] transform = Anchor.transform(anchor);
 
         this.graphics.drawImage(
                 image,
-                point.x - (int)(image.getWidth()*transform[0]),
-                point.y - (int)(image.getHeight()*transform[1]),
+                x - (int)(image.getWidth()*transform[0]),
+                y - (int)(image.getHeight()*transform[1]),
                 null
         );
     }
 
     //### Image Part
-    public void drawImagePart(Point point, String fileName, Rectangle part, Anchor anchor) {
-        this.drawImagePart(point, this.getImage(fileName), part, anchor);
+    public void drawImagePart(Point point, int w, int h, String filePath, Anchor anchor) {
+        this.drawImagePart(point.x, point.y, w, h, this.getImage(filePath), anchor);
     }
 
-    public void drawImagePart(Point point, BufferedImage image, Rectangle part, Anchor anchor) {
+    public void drawImagePart(Point point, Rectangle part, String filePath, Anchor anchor) {
+        this.drawImagePart(point.x, point.y, part.width, part.height, this.getImage(filePath), anchor);
+    }
+
+    public void drawImagePart(int x, int y, int w, int h, String filePath, Anchor anchor) {
+        this.drawImagePart(x, y, w, h, this.getImage(filePath), anchor);
+    }
+
+    public void drawImagePart(int x, int y, int w, int h, BufferedImage image, Anchor anchor) {
         float[] scale = Anchor.transform(anchor);
 
-        int offsetX = (int)(part.width  * scale[0]);
-        int offsetY = (int)(part.height * scale[1]);
+        int offsetX = (int)(w  * scale[0]);
+        int offsetY = (int)(h * scale[1]);
 
         this.graphics.drawImage(
                 image,
-                point.x - offsetX,
-                point.y - offsetY,
-                point.x - offsetX + part.width,
-                point.y - offsetY + part.height,
+                x - offsetX,
+                y - offsetY,
+                x - offsetX + w,
+                y - offsetY + h,
 
-                part.x,
-                part.y,
-                part.x + part.width,
-                part.y + part.height,
+                x,
+                y,
+                x + w,
+                y + h,
 
                 null
         );
@@ -456,18 +455,19 @@ public class API implements
 
 
     //### Image Relative
-    public void drawImage(String fileName, float x, float y, Anchor anchor) {
+    public void drawImage(float x, float y, String filePath, Anchor anchor) {
         this.drawImage(
-                fileName,
                 (int)(this.getWidth()*x),
                 (int)(this.getHeight()*y),
+                filePath,
                 anchor
         );
     }
 
-    public void drawImage(String fileName, float x, float y) {
-        this.drawImage(fileName, x, y, Anchor.TOP_LEFT);
+    public void drawImage(float x, float y, String filePath) {
+        this.drawImage(x, y, filePath, Anchor.TOP_LEFT);
     }
+
 
     //# API.Setup
     public static class Setup
