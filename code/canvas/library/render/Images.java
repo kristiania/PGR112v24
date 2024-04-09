@@ -23,6 +23,14 @@ public interface Images
         this.drawImage(position.x, position.y, filePath, Anchor.TOP_LEFT);
     }
 
+    default void drawImageCentered(int x, int y, String filePath) {
+        this.drawImage(x, y, filePath, Anchor.CENTER);
+    }
+
+    default void drawImageCentered(Point position, String filePath) {
+        this.drawImage(position.x, position.y, filePath, Anchor.CENTER);
+    }
+
 
     //# Image Part
     void drawImagePart(int x, int y, int w, int h, BufferedImage image, Anchor anchor);
