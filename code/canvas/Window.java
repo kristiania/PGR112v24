@@ -205,6 +205,7 @@ public class Window
         private Container target = null;
         private final Rectangle bounds;
         private BufferedImage graphics;
+        private API.Update updateAPI = null;
 
         /** Desired updates per second */
         private double targetUPS = 10;
@@ -346,6 +347,7 @@ public class Window
 
         protected synchronized void setup() {
             API.Setup innerface = new API.Setup(Window.this.getAPI());
+            this.updateAPI = new API.Update(Window.this.getAPI());
 
             for (Plugin plugin : Window.this.currentScene.plugins) {
                 plugin.setup(innerface);
@@ -354,7 +356,7 @@ public class Window
 
         protected synchronized void update() {
             for (Plugin plugin : Window.this.currentScene.plugins) {
-                plugin.update();
+                plugin.update(this.updateAPI);
             }
         }
 

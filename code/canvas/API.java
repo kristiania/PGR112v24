@@ -519,4 +519,39 @@ public class API implements
             this.innerface.background(color);
         }
     }
+
+
+    public static class Update
+    {
+        //# Fields
+        private final API innerface;
+
+
+        //# Constructors
+        Update(API innerface) {
+            this.innerface = innerface;
+        }
+
+
+        //# Methods
+        public Point getCenterPoint() {
+            return this.innerface.getCenterPoint();
+        }
+
+        public int getWidth() {
+            return this.innerface.getWidth();
+        }
+
+        public int getHeight() {
+            return this.innerface.getHeight();
+        }
+
+        public int getHalfWidth() {
+            return (int)(this.getWidth()/2.0);
+        }
+
+        public int getHalfHeight() {
+            return (int)(this.getHeight()/2.0);
+        }
+    }
 }

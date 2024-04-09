@@ -28,7 +28,9 @@ public abstract class Plugin
         return this.identifier;
     }
 
-    public void setup(API.Setup canvas) {}
-    public void update() {}
+    public void setup(API.Setup window) {}
+
+    public void update(API.Update window) {}
+
     abstract public void draw(API canvas);
 }

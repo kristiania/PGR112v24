@@ -42,7 +42,7 @@ class TestWindow extends Plugin {
         Launcher.createWindow(640, 480, new TestWindow());
     }
     
-    public void draw(API window) {
+    public void draw(API canvas) {
         window.drawRectangle(50, 50, 100, 100);
     }
 }
@@ -61,7 +61,7 @@ void update(API.Update window) {
     // kjøres 10 ganger i sekundet
 }
 
-void draw(API window) {
+void draw(API canvas) {
     // kjøres 20 ganger i sekundet
 }
 ```
@@ -115,7 +115,7 @@ void setup(API.Setup window) {
     this.size = new Dimension(50, 50);
 }
 
-void draw(API window) {
+void draw(API canvas) {
     window.drawRectangle(this.position, this.size);
 }
 ```
@@ -129,7 +129,7 @@ void setup(API.Setup window) {
     this.center = window.getCenterPoint();
 }
 
-void draw(API window) {
+void draw(API canvas) {
     window.drawTextCentered(this.center, "middle of the window");
 }
 ```
