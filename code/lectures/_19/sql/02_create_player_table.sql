@@ -1,3 +1,5 @@
+USE lecture19;
+
 CREATE TABLE player(
     id                  INT AUTO_INCREMENT,
     moniker             VARCHAR(255) UNIQUE NOT NULL,
