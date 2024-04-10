@@ -38,7 +38,7 @@ F.eks. `mysql -u lecture18 -p`
 
 ## Oppgave 3
 
-Denne oppgaven kan gjøres i et eget prosjekt eller ved å bruke `files/`-mappen, for eksempelvis her: `files/tasks/database/_00/database.properties`
+Denne oppgaven kan gjøres ved å bruke `files/`-mappen, for eksempelvis her: `files/tasks/database/_00/database.properties`
 
 Opprett en tom tekstfil som heter `database.properties` som inneholder følgende:
 
@@ -47,7 +47,9 @@ username=lecture18
 password=password18
 ```
 
-Deretter bruk følgende to kodelinjer som et utgangspunkt for å hente disse verdiene ut via kode:
+Opprett en klasse som heter `DatabaseTask00` her: `code/tasks/database/_00/src/`
+
+Deretter bruk følgende to kodelinjer som et utgangspunkt i en statisk main-metode for å hente disse verdiene ut via kode:
 
 ```java
 Properties properties = new Properties();
@@ -63,9 +65,9 @@ Husk å sjekke evt. Exceptions som kan oppstå ved å sjekke for `IOException`.
 
 Opprett 3 nye Exceptions (ved hjelp av arv og Exception-klassen) for følgende 3 situasjoner:
 
-- `database.properties`-filen eksisterer ikke og denne må opprettes for at programmet skal kunne kjøpre
+- `database.properties`-filen eksisterer ikke og denne må opprettes for at programmet skal kunne kjøre
 - Brukernavnet kunne ikke leses av og programmet kan ikke fortsette uten
-- Passordet kunne ikke leses av og programmer kan ikke fortsette uten
+- Passordet kunne ikke leses av og programmet kan ikke fortsette uten
 
 Gjøre endringer i koden fra Oppgave 3 slik at disse Exceptions-ene blir kastet når de ulike situasjonene oppstår
 
