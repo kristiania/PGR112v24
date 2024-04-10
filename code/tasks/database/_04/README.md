@@ -36,7 +36,7 @@ Gjør nødvendige endringer i oppgavene identifisert i oppgave 1, altså:
 Du kan bruke følgende kodesnutt som et eksempel og kontekst med hva som menes:
 
 ```java
-import java.sql.PreparedStatement;// Her antas det at vi har en `connection`-variabel av typen `Connection` allerede
+// Her antas det at vi har en `connection`-variabel av typen `Connection` allerede
 int id = 123;
 
 //# Statement
