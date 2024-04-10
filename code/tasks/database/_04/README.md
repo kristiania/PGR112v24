@@ -40,11 +40,16 @@ Du kan bruke følgende kodesnutt som et eksempel og kontekst med hva som menes:
 int id = 123;
 
 //# Statement
+String query = STR."SELECT * FROM table WHERE id = \{id};";
+
 Statement statement = connection.createStatement();
-ResultSet result = statement.executeQuery(STR."SELECT * FROM table WHERE id = \{id};");
+
+ResultSet result = statement.executeQuery(query);
+
 
 //# PreparedStatement
 String query = "SELECT * FROM table WHERE id = ?;";
+
 PreparedStatement statement = statement.prepareStatement();
 
 statement.setInt(1, id);
