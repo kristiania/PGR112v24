@@ -1,17 +1,15 @@
 package solutions.database._02.src;
 
-
 import com.mysql.cj.jdbc.Driver;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 import java.util.Scanner;
+
 
 public class Terminal
 {
@@ -23,7 +21,7 @@ public class Terminal
         try {
             DriverManager.registerDriver(new Driver());
 
-            Terminal.configuration.load(new FileInputStream("files/tasks/database/terminal/database.properties"));
+            Terminal.configuration.load(new FileInputStream("files/tasks/database/_02/database.properties"));
         } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
