@@ -98,7 +98,7 @@ Får du opp skjemaet fra `CREATE TABLE`-uttrykket kjørt tidligere?
 
 La oss lage en admin-bruker!
 
-Først, la oss lage et passord. Bruk en statisk main-metode i en midlertidig klasse, og kjør: `Password.hash("et passord to velger selv");`
+Først, la oss lage et passord. Bruk en statisk main-metode i en midlertidig klasse, og kjør: `Password.hash("et passord du velger selv");`
 
 Følgende String-verdi gjelder for `admin` som et passord: `jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=`
 
@@ -149,9 +149,9 @@ Begynne med følgende metode i `Terminal`-klassen som et utgangspunkt:
    }
 ```
 
-> **Hint 1**: `ResultSet` starter pekeren sin ved å se på rad 0 (som er før allt eventuelle resultater).
+> **Hint 1**: `ResultSet` starter pekeren sin ved å se på rad 0 (som er før alle eventuelle resultater).
 > For å flytte pekeren til rad 1, så trenger vi å kalle på en metode.
-> Hva returnerer denne metoden (tenk: data-type)? Kan vi bruke denne retur-verdien for å sjekke om det er en verdi tilstede i neste rad, om det er en rad vi kan lese av som neste rad?
+> Hva returnerer denne metoden (tenk: data-type)? Kan vi bruke denne retur-verdien for å sjekke om det er en verdi tilstede i neste rad, altså, om det er en rad vi kan lese av som neste rad?
 
 > **Hint 2**: For å flytte pekeren til _neste_ rad, så må vi kalle på metoden som heter..? Og hva returnerer denne metoden?
 
@@ -166,7 +166,7 @@ Bruk følgende metode som et utgangspunkt i `Terminal`-klassen:
 ```java
     // ta utgangspunkt i psuedo-koden under
     boolean createUser(String username, String password) {
-        // Check if username exists
+        // Check if username does not exists
             // 1 hash password 
             // 2 get database connection
             // 3 create a statement
@@ -175,7 +175,7 @@ Bruk følgende metode som et utgangspunkt i `Terminal`-klassen:
                 // can this return value be used to decide if a row was added to the database or not?
             // 5 check if row was inserted or not, if so, return true
        
-        // Else, if username does not exists, return false
+        // Else, if username does exists, return false
     }
 ```
 
@@ -233,7 +233,7 @@ Fullfør meny-valgene slik at det er mulig å utføre det meny-valgene lar deg v
 
 > Hint 1.: Bruk gjerne .next() inne i en while-loop, litt på lik linje med while (input.hasNextLine()) når vi leser av en fil med flere linjer!
 
-> Hint 2.: Her må administrator skrive inn brukernavn og passord, og få det passordet som er hashet printet ut til terminalen slik at det kan deles/tests 
+> Hint 2.: Her må administrator skrive inn brukernavn og passord, og få det passordet som er hashet printet ut til terminalen slik at det kan deles/testes 
 
 > Hint 3.: Her må du bruke en `DELETE`-spørring. Istedenfor .executeQuery(...) kan du sjekke resultatet fra .executeUpdate(...) for å lettere sjekke om en oppdatering i databasen (bruker fjernet) skjedde eller ikke!
 

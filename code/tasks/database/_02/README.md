@@ -43,9 +43,9 @@ Legg til de nødvendige nøklene og relevante verdier fra oppgave 2, og lagre en
 
 ## Oppgave 4
 
-I `Terminal`-klassen, opprett en statisk kodeblokk om gjør følgende:
+I `Terminal`-klassen, opprett en statisk kodeblokk som gjør følgende:
 
-1. Registrer MySQL-driveren
+1. Registrerer MySQL-driveren
 2. Laster inn `database.properties` fra oppgave 3 ved hjelp av:
   - `Terminal.configuration.load(new FileInputStream("files/tasks/database/terminal/database.properties"))`
 3. Kaster en `RuntimeException` dersom en feil oppstår ved enten registrering av driver eller ikke alle nøklene med tilhørende verdier er tilstede i `database.properties`-filen
@@ -58,7 +58,7 @@ I `Terminal`-klassen, opprett en statisk metode som heter `getDatabaseConnection
 
 Denne metoden skal opprette en instanse av `Connection`-klassen ved å bruke `DriverManager.getConnection(...)` og returnere denne.
 
-Denne metoden skal også ha `throws SQLException` som en del av metode signaturen sin.
+Denne metoden skal også ha `throws SQLException` som en del av metode-signaturen sin.
 
 ---
 

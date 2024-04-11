@@ -55,11 +55,7 @@ Denne statiske metoden skal utføre kodesnutten over, hvor parameteret `input` b
 
 ---
 
-### Oppgave 2.2 -- `void setPassword(String value)`
-
-Denne metoden skal sette verdien i feltet `password` til å være resultatet av `Password.hash(value)` - hvor `value` er parameteret tilgjengelig i metoden `void setPassword(String value)`
-
-#### Oppgave 2.2.1
+#### Oppgave 2.1.1
 
 Test at dette fungerer ved å lage en klasse i en midlertidig klasse (dette er kun for å teste) med en statisk main-metode som printer ut resultatet av følgende kodelinjer:
 
@@ -76,7 +72,13 @@ Sjekk at du får ut riktig resultat ved å sammenligne med kommentarene ovenfor.
 
 ---
 
-### Oppgave 2.2 -- `boolean verifyPassword(String value)`
+### Oppgave 2.2 -- `void setPassword(String value)`
+
+Denne metoden skal sette verdien i feltet `password` til å være resultatet av `Password.hash(value)` - hvor `value` er parameteret tilgjengelig i metoden `void setPassword(String value)`
+
+---
+
+### Oppgave 2.3 -- `boolean verifyPassword(String value)`
 
 Denne metoden skal sjekke at `Password.hash(value)` er det samme som er lagret i `this.password`-feltet, og returnerer true dersom dette stemmer.
 
