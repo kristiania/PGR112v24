@@ -12,6 +12,19 @@ import canvas.library.resource.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/*
+       Reversi, rules:
+
+       1) Player with black pieces starts
+       2) A piece can only be placed if it results in pieces being flipped
+       3) If a player can not place down a piece that can cause other pieces to flip,
+          instead the turn goes back other player
+       4) The game is finished if there are no more empty squares,
+          or, neither player can place a piece that can cause other pieces to flip
+       5) After the game is finished, the winner is the player with the most pieces
+
+*/
+
 
 public class Reversi extends Plugin
 {
@@ -24,6 +37,7 @@ public class Reversi extends Plugin
     private Point center;
     private Point upperLeftCorner;
     private Piece player = Piece.BLACK;
+    private final int[] pieces = { 0, 0 };
     private final Piece[][] board = new Piece[8][8];
     private final boolean[][] possibleMoves = new boolean[8][8];
     private Dimension boardSize;
@@ -31,6 +45,8 @@ public class Reversi extends Plugin
     private int boardDelta;
     private boolean cursorDown = false;
     private int turn = 1;
+    private int emptyTurns = 0;
+    private boolean gameFinished = false;
 
 
     private final HashMap<String, Color> colors = new HashMap<>();
@@ -70,22 +86,36 @@ public class Reversi extends Plugin
 
         window.setBackgroundColor(this.colors.get("dark green"));
 
-        window.onMousePress((point) -> {
+        window.onMousePress((_) -> {
             this.cursorDown = true;
         });
 
         window.onMouseRelease((point) -> {
             this.cursorDown = false;
 
-            if (this.boardArea.contains(point)) {
+            if (this.boardArea.contains(point) && !this.gameFinished) {
                 this.placePiece(point);
             }
         });
     }
 
     private void checkMoves() {
+        if (this.gameFinished) {
+            return;
+        }
+
+        this.pieces[0] = this.pieces[1] = 0;
+
         for (int x = 0; x < 8; x ++) {
             for (int y = 0; y < 8; y ++) {
+                if (this.board[x][y] != null) {
+                    if (this.board[x][y].equals(Piece.BLACK)) {
+                        this.pieces[0]++;
+                    } else if (this.board[x][y].equals(Piece.WHITE)) {
+                        this.pieces[1]++;
+                    }
+                }
+
                 this.possibleMoves[x][y] = false;
             }
         }
@@ -101,6 +131,34 @@ public class Reversi extends Plugin
                             this.checkLine(opponent, false, x, y, vx, vy);
                         }
                     }
+                }
+            }
+        }
+
+        int moves = 0;
+
+        for (int x = 0; x < 8; x ++) {
+            for (int y = 0; y < 8; y++) {
+                if (this.possibleMoves[x][y]) {
+                    moves ++;
+                    break;
+                }
+            }
+        }
+
+        if (moves > 0) {
+            this.emptyTurns = 0;
+        }
+        else {
+            if (moves == 0) {
+                this.player = this.getOpponentPiece();
+                this.emptyTurns++;
+                this.turn++;
+
+                if (this.emptyTurns == 2) {
+                    this.gameFinished = true;
+                } else {
+                    this.checkMoves();
                 }
             }
         }
@@ -213,6 +271,27 @@ public class Reversi extends Plugin
                 this.center.x, 100,
                 STR."Turn \{this.turn}"
         );
+
+        window.drawTextCentered(
+                this.center.x, window.getHeight() - 125,
+                STR."BLACK: \{this.pieces[0]}"
+        );
+
+        window.drawTextCentered(
+                this.center.x, window.getHeight() - 100,
+                STR."WHITE: \{this.pieces[1]}"
+        );
+
+        if (this.gameFinished) {
+            window.drawTextCentered(
+                    this.center.x, window.getHeight() - 100,
+                    STR."\{this.pieces[0] == this.pieces[1]
+                            ? "TIE"
+                            : STR."Game winner: \{this.pieces[0] > this.pieces[1]
+                            ? "BLACK" : "WHITE"}"
+                        }"
+            );
+        }
 
         this.drawBoard(window);
 
