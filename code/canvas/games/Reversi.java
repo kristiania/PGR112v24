@@ -273,21 +273,21 @@ public class Reversi extends Plugin
         );
 
         window.drawTextCentered(
-                this.center.x, window.getHeight() - 125,
+                this.center.x, window.getHeight() - 150,
                 STR."BLACK: \{this.pieces[0]}"
         );
 
         window.drawTextCentered(
-                this.center.x, window.getHeight() - 100,
+                this.center.x, window.getHeight() - 125,
                 STR."WHITE: \{this.pieces[1]}"
         );
 
         if (this.gameFinished) {
             window.drawTextCentered(
-                    this.center.x, window.getHeight() - 100,
+                    this.center.x, window.getHeight() - 75,
                     STR."\{this.pieces[0] == this.pieces[1]
                             ? "TIE"
-                            : STR."Game winner: \{this.pieces[0] > this.pieces[1]
+                            : STR."Winner: \{this.pieces[0] > this.pieces[1]
                             ? "BLACK" : "WHITE"}"
                         }"
             );
@@ -296,16 +296,21 @@ public class Reversi extends Plugin
         this.drawBoard(window);
 
         if (this.cursorDown && this.boardArea.contains(window.getCursor())) {
-            window.fill(this.colors.get("gray"));
+            int x = this.getXFromMouseX(window.getMouseX());
+            int y = this.getYFromMouseY(window.getMouseY());
 
-            window.drawCircle(
-                    this.upperLeftCorner.x + this.boardDelta*this.getXFromMouseX(window.getMouseX()),
-                    this.upperLeftCorner.y + this.boardDelta*this.getYFromMouseY(window.getMouseY()),
-                    25,
-                    Anchor.TOP_LEFT
-            );
+            if (this.board[x][y] == null) {
+                window.fill(this.colors.get("gray"));
 
-            window.noFill();
+                window.drawCircle(
+                        this.upperLeftCorner.x + this.boardDelta*x,
+                        this.upperLeftCorner.y + this.boardDelta*y,
+                        25,
+                        Anchor.TOP_LEFT
+                );
+
+                window.noFill();
+            }
         }
     }
 
