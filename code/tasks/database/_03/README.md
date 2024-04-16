@@ -166,7 +166,7 @@ Bruk følgende metode som et utgangspunkt i `Terminal`-klassen:
 ```java
     // ta utgangspunkt i psuedo-koden under
     boolean createUser(String username, String password) {
-        // Check if username does not exists
+        // Check if username does not exist
             // 1 hash password 
             // 2 get database connection
             // 3 create a statement
@@ -179,7 +179,9 @@ Bruk følgende metode som et utgangspunkt i `Terminal`-klassen:
     }
 ```
 
-Sjekk gjerne om brukeren ble lagt til ved å kjøre en `SELECT`-spørring eller via `userExists(...)` 
+Test om funksjonen fungerer ved å opprette en klasse som heter `Main`, hvor du i en statisk main-metode oppretter en instans av `Terminal`-klassen og forsøker da å kjøre metoden over via denne instansen.
+
+Sjekk gjerne om brukeren ble lagt til i databasen ved å kjøre en `SELECT`-spørring eller via `.userExists(...)` 
 
 ---
 
