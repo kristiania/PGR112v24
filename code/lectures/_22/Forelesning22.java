@@ -13,7 +13,7 @@ public class Forelesning22
         topics.add("Lese fra fil og inn i database");
         topics.add("- Tips til forberedelser neste uke");
 
-        System.out.println("Forelesning 2");
+        System.out.println("Forelesning 22");
 
         for (String topic : topics) {
             System.out.print(" - ");
