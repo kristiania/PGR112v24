@@ -72,10 +72,12 @@ public class Terminal
 
             var statement = connection.prepareStatement(query);
 
+            statement.setString(1, username);
+
             var result = statement.executeQuery();
 
             return result.next();
-        } catch (Exception e) {
+        }  catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
