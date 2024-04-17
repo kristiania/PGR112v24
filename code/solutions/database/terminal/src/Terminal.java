@@ -287,8 +287,12 @@ public class Terminal
         */
 
         try {
-            for (var username : this.accounts.getUsernames()) {
-                System.out.println(username);
+            var data = this.accounts.getUsers();
+
+            for (var entry : data.entrySet()) {
+                System.out.println(
+                        STR." - \{entry.getKey()}: \{entry.getValue()}"
+                );
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
