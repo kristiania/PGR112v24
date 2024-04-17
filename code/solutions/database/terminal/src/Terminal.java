@@ -67,9 +67,12 @@ public class Terminal
     //# Methods
     boolean userExists(String username) {
         try (var connection = Terminal.getDatabaseConnection()) {
-            Statement statement = connection.createStatement();
 
-            ResultSet result = statement.executeQuery(STR."SELECT id, username FROM account WHERE username = '\{username}';");
+            String query = "SELECT id, username FROM account WHERE username = ?;";
+
+            var statement = connection.prepareStatement(query);
+
+            var result = statement.executeQuery();
 
             return result.next();
         } catch (Exception e) {
@@ -82,12 +85,13 @@ public class Terminal
             String hash = Password.hash(password);
 
             try (var connection = Terminal.getDatabaseConnection()) {
-                var statement = connection.createStatement();
 
+                var statement = connection.prepareStatement("INSERT INTO account(username, password) VALUES (?, ?);");
 
-                String query = STR."INSERT INTO account(username, password) VALUES('\{username}', '\{hash}');";
+                statement.setString(1, username);
+                statement.setString(2, hash);
 
-                int rowsAffected = statement.executeUpdate(query);
+                int rowsAffected = statement.executeUpdate();
 
                 return rowsAffected > 0;
             } catch (SQLException e) {
@@ -103,11 +107,12 @@ public class Terminal
     boolean login(String username, String password) {
         if (this.currentUser == null) {
             try (var connection = Terminal.getDatabaseConnection()) {
-                Statement statement = connection.createStatement();
 
-                ResultSet result = statement.executeQuery(
-                        STR."SELECT id, username, password FROM account WHERE username = '\{username}';"
-                );
+                var statement = connection.prepareStatement("SELECT id, username, password FROM account WHERE username = ?;");
+
+                statement.setString(1, username);
+
+                var result = statement.executeQuery();
 
                 if (result.next()) {
                     Account account = new Account(username, password);
