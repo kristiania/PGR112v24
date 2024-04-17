@@ -20,7 +20,7 @@ public class Terminal
         try {
             DriverManager.registerDriver(new Driver());
 
-            Terminal.configuration.load(new FileInputStream("files/tasks/database/_03/database.properties"));
+            Terminal.configuration.load(new FileInputStream("files/tasks/database/terminal/database.properties"));
 
             String[] keys = { "host", "port", "database", "username", "password" };
 
