@@ -6,6 +6,13 @@ Oppgaven består av flere deler hvor hver del har oppgaver tilknyttet delen.
 
 Ta gjerne notater underveis, gjerne tilknyttet hver del og tilhørende oppgave.
 
+Dette er ikke et prosjekt hvor det er meningen å bli ferdig, men det å kontinuerlig jobbe med det å lage klasser som sammen representerer et hotell.
+
+Begynn enkelt og husk å hele tiden still deg selv spørsmålet: "Er dette relevant eller gjør dette det unødvendig kompleks akkurat nå?"
+
+Fokuset i begynnelsen er å lage klasser og kartlegge felter og metoder som trengs, hvor det viktigste er at metodene har beskrivende navn og retur-typer som gir mening.
+Metodene trenger ikke kode med det første, så mye kan planlegges kun ved hjelp av gode navn på metoder og retur-typer.
+
 ---
 
 Del 1 baserer seg på å få kodet det en trenger av klasser og hvordan disse henger sammen.
@@ -55,7 +62,7 @@ Når du har gjort deg ferdig så kan du gjerne gå til relevant del-oppgave ut i
 
 Ta utgangspunkt i å representere selve hotellrommet.
 
-Begynn med en klasse som heter `Room`, og begynn med følgende spørsmål: "Er alle rom like eller har hotellet ulike type rom?"
+Begynn med en klasse som heter `Room`, og beg ssynn med følgende spørsmål: "Er alle rom like eller har hotellet ulike type rom?"
 
 Svaret på spørsmålet indikerer gjerne om `Room`-klassen burde være abstrakt eller ikke.
 
@@ -159,11 +166,23 @@ CREATE TABLE guest(
     PRIMARY KEY (id)
 );
 
-CREATE TABLE room(
+CREATE TABLE floor(
     id          INT AUTO_INCREMENT,
     number      INT UNSIGNED UNIQUE,
+    rooms       INT UNSIGNED NOT NULL,
     
     PRIMARY KEY (id)
+)
+
+CREATE TABLE room(
+    id          INT AUTO_INCREMENT,
+    name        VARCHAR(255) NOT NULL DEFAULT 'Standard-rom',
+    number      INT UNSIGNED UNIQUE,
+    price       INT UNSIGNED,
+    floor       INT UNSIGNED,
+    
+    PRIMARY KEY (id),
+    FOREIGN KEY (floor) REFERENCES floor(id)
 );
 
 CREATE TABLE room_facility(
@@ -172,6 +191,7 @@ CREATE TABLE room_facility(
     facility    ENUM('bathroom', 'balcony', 'fridge', 'wardrobe', 'room-service', 'tv', 'chromecast', 'speaker', 'couch', 'table'),
     state       BOOLEAN,
     
+    # Kompositt-nøkkel, sier egentlig bare at kombinasjonen av room- og facility-kolonnene må være unik
     CONSTRAINT facility_status PRIMARY KEY (room, facility),
     FOREIGN KEY (room) REFERENCES room(id)
 );
