@@ -1,12 +1,12 @@
 # Oversikt over ferdigheter
 
-> Versjon: **2024-04-09**
+> Versjon: **2024-04-23**
 
 > PGR112 Objektorientert programmering
 
 ---
 
-Tema: Programmeringsspråket Java
+> Tema: Programmeringsspråket Java
 
 Jeg klarer å ...
 
@@ -60,7 +60,7 @@ Jeg klarer å ...
 - [ ] klarer å bruke nøkkelordet `instanceof` og kjenner til når vi bruker dette
 - [ ] klarer å bruke static kodeblokk for å legge til innledende verdier i statiske felter, f.eks. ArrayList eller HashMap
 - [ ] klarer å forklare forskjellen på statiske og ikke-statiske kodeblokker
-- [ ] bruke try-with syntaks i forbindelse med ressurser som f.eks. filer som må lukkes etter bruk
+- [ ] bruke try-with syntaks i forbindelse med ressurser som f.eks. filer eller database-tilkoblinger som må lukkes etter bruk
 - [ ] bruke nøkkelordet `var`
 
 ---
@@ -92,18 +92,29 @@ Jeg klarer å ...
 - [ ] lage et eksempel som viser bruk av downcasting
 - [ ] lage et eksempel som viser bruk av upcasting
 
+| `S.O.L.I.D.`
+- [ ] lese igjennom følgende artikkel om temaet: https://www.baeldung.com/solid-principles
+- [ ] forstå hva `S - Single Responsibility` innebærer med tanke på at klasser burde ha minst mulig ansvar, ergo kun én grunn til å endres ved behov senere
+- [ ] forstå hva `O - Open/Closed` innebærer med tanke på åpen for utvidelse, lukket for endringer i forbindelse med klasser
+- [ ] forstå hva `L - Liskov Substitution` innebærer med tanke på polymorfisme og det å kunne gi en sub-type som argument for hvor en super-klasse brukes uten å forstyrre flyten i programmet
+- [ ] forstå hva `I - Interface Segregation` innebærer med tanke på å bryte opp større grensesnitt i mindre grensesnitt slik at klasser kan være med tydelig med nøyaktiv oppførsel som skal implementeres
+- [ ] forstå hva `D - Dependency Inversion` innebærer med tanke på at klasser burde forholde seg til abstraksjoner istedenfor konkrete implementasjoner mellom klasser som forholder seg til hverandre via arv eller aggregering
+
 ---
 
 > Tema: Databaser
 
 Jeg klarer å ...
 
-- [ ] sikre meg om at JDBC Driver-klassen kan importeres
+- [ ] sikre meg om at JDBC Driver-klassen kan importeres ved å legge til Connector/J i et prosjekt
 - [ ] registrere MySQL driveren via `DriverManager`
 - [ ] laste inn en `.properties`-fil ved hjelp av `Properties`-klassen og dens `.load(...)`-metode
 - [ ] kaste `RuntimeException` ved behov for å stoppe opp programmet mitt fordi det ikke gir mening å fortsette som normalt
 - [ ] opprette en tilkobling til en database via `DriverManager.getConnection(...)`
 - [ ] håndtere `SQLException` som kan oppstå
+- [ ] kjøre SQL-spørringer ved hjelp av Java
+- [ ] forklare hvorfor og når `PreparedStatement` skal brukes istedenfor `Statement`
+- [ ] forstå hvordan jeg kan sikre databasen min mot SQL-injection
 
 ---
 
@@ -124,10 +135,13 @@ Jeg klarer å ...
 - [ ] skrive en `SELECT`-spørring som henter ut alle rader med alle kolonner fra databasen
 - [ ] skrive en `SELECT`-spørring som henter ut alle rader med spesifike kolonner fra databasen
 - [ ] skrive en `SELECT`-spørring som henter ut én (kun 1) rad med alle kolonner fra databasen
-- [ ] bruker `WHERE` som ne del av en `SELECT`-spørring
+- [ ] bruker `WHERE` som en del av en `SELECT`-spørring
 - [ ] bruke `LIMIT` som en del av en `SELECT`-spørring
 - [ ] bruke `GROUP BY` som en del av en `SELECT`-spørring
 - [ ] bruke `ORDER BY` som en del av en `SELECT`-spørring
+
+| `WHERE`
+- [ ] forstå hvordan `WHERE` kan brukes i ulike typer spørringer for å begrense hva som skal selekteres eller påvirkes
 
 | `INSERT INTO`
 - [ ] skrive en `INSERT INTO`-spørring som legger til én (1) rad i databasen
@@ -137,12 +151,11 @@ Jeg klarer å ...
 - [ ] skrive en `UPDATE`-spørring som oppdaterer flere rader i databasen
 
 | `DELETE`
-- [ ] skrive en `DELETE`-sprring som fjerner 
+- [ ] skrive en `DELETE`-sprring som fjerner én rad i databasen 
 
 | `JOIN`
 - [ ] forstå forskjellen på `LEFT`-, `INNER`- og `RIGHT`-join
 - [ ] forstå hvordan `JOIN`-uttrykk kan håndteres via programmering istedenfor SQL-spørringer
-
 
 ---
 
@@ -150,8 +163,8 @@ Jeg klarer å ...
 
 Jeg klarer å ...
 
-- [ ] kjenner til ordet "abstrakt" og hva som menes med det
-- [ ] kjenner til ordet "implementasjon" og hva som menes med det, spesielt i konteksten av abstrakte metoder
+- [ ] kjenne til ordet "abstrakt" og hva som menes med det
+- [ ] kjenne til ordet "implementasjon" og hva som menes med det, spesielt i konteksten av abstrakte metoder
 - [ ] forklare forskjellen på pascal-case, camel-case og kebab-case når det kommer til å navngi noe
 - [ ] bruke et grensesnitt (interface) for å planlagge hva ulike klasser må ha tilgjengelig av offentlige metoder før klasser lages
 - [ ] bryte opp større offentlig (public) metoder ved å bruke private metoder som hjelpe-metoder
