@@ -1,4 +1,4 @@
-USE lecture21;
+USE lecture24;
 
 CREATE TABLE IF NOT EXISTS library_book(
     isbn BIGINT,
