@@ -3,6 +3,7 @@ code/**/code/**/*
 code/**/src/**/*
 # eksempel filer
 files/example/**/*
+files/private/**/*
 !files/example/.placeholder
 # filer i forbindelse med forelesniger
 !files/lecture/**/*
