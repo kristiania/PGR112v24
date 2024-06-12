@@ -1,6 +1,6 @@
 # Oversikt over ferdigheter
 
-> Versjon: **2024-04-23**
+> Versjon: **2024-06-12**
 
 > PGR112 Objektorientert programmering
 
@@ -22,7 +22,7 @@ Jeg klarer å ...
 - [ ] forklare hva metoder er og hva de brukes til
 - [ ] lage en loop som teller fra 0 til 10 og printer ut tallene til terminalen
 - [ ] bruke en while-loop
-- [ ] forskjellen på bruken continue og break inne i en loop
+- [ ] forklare forskjellen på bruken continue og break inne i en loop
 - [ ] bruke String concatenation i forbindelse med å printe ut tekst som bruker variabler for å tilpasse hva som printes ut
 - [ ] skrive en enkel if-setning
 - [ ] bruke && og || inne i en if-setning
@@ -54,12 +54,12 @@ Jeg klarer å ...
 - [ ] hente ut alle verdiene lagret i et HashMap og printe disse ut til terminalen
 - [ ] bruke System.out.printf(...) for å formatere hva som printes ut til terminalen
 - [ ] bruke "en faktisk String-verdi".formatted() for å lagre formatert tekst i en variabel av datatypen String
-- [ ] klarer å bruke Scanner for å lese en tekstfil linje for linje
-- [ ] klarer å bruke FileWriter for å skrive over innholdet i en tekstfil
-- [ ] klarer å bruke FileWriter for å legge til tekst på slutten av en tekstfil som allerede inneholder tekst
-- [ ] klarer å bruke nøkkelordet `instanceof` og kjenner til når vi bruker dette
-- [ ] klarer å bruke static kodeblokk for å legge til innledende verdier i statiske felter, f.eks. ArrayList eller HashMap
-- [ ] klarer å forklare forskjellen på statiske og ikke-statiske kodeblokker
+- [ ] bruke Scanner for å lese en tekstfil linje for linje
+- [ ] bruke FileWriter for å skrive over innholdet i en tekstfil
+- [ ] bruke FileWriter for å legge til tekst på slutten av en tekstfil som allerede inneholder tekst
+- [ ] bruke nøkkelordet `instanceof` og kjenner til når vi bruker dette
+- [ ] bruke static kodeblokk for å legge til innledende verdier i statiske felter, f.eks. ArrayList eller HashMap
+- [ ] orklare forskjellen på statiske og ikke-statiske kodeblokker
 - [ ] bruke try-with syntaks i forbindelse med ressurser som f.eks. filer eller database-tilkoblinger som må lukkes etter bruk
 - [ ] bruke nøkkelordet `var`
 
